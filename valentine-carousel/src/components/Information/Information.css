@@ -1,0 +1,153 @@
+/* Cute and Playful Stylesheet for Urja's Information Page */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+.urja-info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff5f5;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 192, 203, 0.2);
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+    padding-bottom: 20px;
+}
+
+.section-tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #FFB6C1;
+    padding: 10px 0;
+}
+
+.section-tabs button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.section-tabs button.active {
+    background-color: white;
+    color: #FF69B4;
+    transform: scale(1.05);
+}
+
+.section-tabs button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-content {
+    padding: 20px;
+}
+
+.info-section h2 {
+    text-align: center;
+    color: #FF69B4;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.info-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.2);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+}
+
+.info-item .label {
+    font-weight: 600;
+    color: #FF69B4;
+    margin-right: 10px;
+}
+
+.info-item .value {
+    color: #333;
+}
+
+.info-item .icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Orders Section Specific Styling */
+.order-details {
+    display: grid;
+    gap: 20px;
+}
+
+.order-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(255, 192, 203, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.order-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+}
+
+.order-name {
+    font-weight: 700;
+    color: #FF69B4;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-bottom: 2px solid #FFB6C1;
+    padding-bottom: 8px;
+}
+
+.order-list {
+    display: grid;
+    gap: 8px;
+}
+
+.order-entry {
+    display: flex;
+    align-items: center;
+}
+
+.order-label {
+    font-weight: 600;
+    color: #FF69B4;
+    margin-right: 10px;
+}
+
+.order-value {
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .info-grid,
+    .section-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .section-tabs button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
