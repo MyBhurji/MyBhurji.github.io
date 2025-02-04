@@ -277,8 +277,7 @@ const Information = () => {
               <div className="order-value">Fundays - Bagel, Donuts, Waffles, or Pancakes</div>
             </div>
             <div className="order-entry">
-              <div className="order-label">Omelette:</div>
-              <div className="order-value">Mushroom, Bell Peppers, Spinach, Tomatoes, Onions</div>
+              <div className="order-value">Omelette: Mushroom, Bell Peppers, Spinach, Tomatoes, Onions</div>
             </div>
           </div>
         </div>
