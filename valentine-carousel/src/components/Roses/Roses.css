@@ -1,349 +1,203 @@
-/* Improved Rose CSS */
 .roses-container {
   width: 100%;
   height: 100vh;
   background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   overflow: hidden;
-  position: relative;
 }
 
-.rose-garden {
-  position: relative;
-  width: 300px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-}
-
-.rose {
+.sun {
   position: absolute;
-  bottom: 0; /* Changed from 50px to 0 */
-  width: 200px;
-  height: 400px;
+  top: 60px;  /* Adjusted position to account for larger size */
+  right: 60px;
+  width: 110px;  /* Doubled from 80px */
+  height: 110px;  /* Doubled from 80px */
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 100px #FFD700;  /* Doubled shadow size */
+  animation: glow 2s infinite alternate;
 }
 
-/* Stem */
-.stem {
+.sun-rays {
   position: absolute;
-  bottom: 12; /* Changed to touch the ground exactly */
-  left: 50%;
-  transform: translateX(-51010%);
-  width: 112px;
-  height: 400px; /* Increased to full height of the rose */
-  background: linear-gradient(to bottom, #2E8B57, #3CB371);
-  border-radius: 50px;
-  box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
-  animation: growStem 1.5s ease-out forwards;
-}
-
-/* Rest of the CSS remains the same *//* Improved Rose CSS */
-.roses-container {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.rose-garden {
-  position: relative;
-  width: 300px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-}
-
-.rose {
-  position: absolute;
-  bottom: 50px;
-  width: 200px;
-  height: 400px;
-}
-
-/* Stem */
-.stem {
-  position: absolute;
-  bottom: 12; /* Extend below the original position */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 350px; /* Increased height to reach ground */
-  background: linear-gradient(to bottom, #2E8B57, #3CB371);
-  border-radius: 50px;
-  box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
-  animation: growStem 1.5s ease-out forwards;
-}
-
-/* Leaves */
-.leaves {
-  position: absolute;
-  width: 100%;
-}
-
-.leaf {
-  position: absolute;
-  width: 80px;
-  height: 40px;
-  background: linear-gradient(to right, #3CB371, #2E8B57);
-  border-radius: 50% 0;
-  opacity: 0;
-}
-
-.leaf1 {
+  top: -40px;  /* Doubled from -20px */
   left: -40px;
-  bottom: 100px;
-  transform: rotate(-30deg);
-  animation: growLeaf1 1s ease-out forwards;
-  animation-delay: 1s;
-}
-
-.leaf2 {
   right: -40px;
-  bottom: 150px;
-  transform: rotate(30deg) scaleX(-1);
-  animation: growLeaf2 1s ease-out forwards;
-  animation-delay: 1.2s;
+  bottom: -40px;
+  background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, rgba(255,215,0,0) 70%);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
 }
 
-.leaf3 {
-  left: -20px;
-  bottom: 50px;
-  transform: rotate(-15deg);
-  animation: growLeaf3 1s ease-out forwards;
-  animation-delay: 1.4s;
+/* Updated cloud styles with doubled size */
+.cloud {
+  position: absolute;
+  top: 100px;
+  animation: float 20s infinite linear;
+  transform: scale(1.3);  /* Scale up the entire cloud */
 }
 
-/* Rest of the CSS remains the same *//* Improved Rose CSS */
-.roses-container {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
+.cloud1 { left: 10%; animation-delay: -2s; }
+.cloud2 { left: 30%; top: 80px; animation-delay: -5s; }  /* Adjusted top position */
+.cloud3 { left: 50%; animation-delay: -8s; }
+.cloud4 { left: 70%; top: 120px; animation-delay: -11s; }  /* Adjusted top position */
+.cloud5 { left: 90%; animation-delay: -14s; }
+
+.cloud-part {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);  /* Doubled shadow size */
+}
+
+.cloud-part:nth-child(1) { top: 0; left: 0; }
+.cloud-part:nth-child(2) { top: -15px; left: 25px; width: 60px; height: 60px; border-radius: 50%; }
+.cloud-part:nth-child(3) { top: -5px; left: 60px; width: 60px; height: 50px; border-radius: 25px; }
+
+/* Animations remain the same */
+@keyframes glow {
+  from { box-shadow: 0 0 60px #FFD700; }  /* Doubled glow size */
+  to { box-shadow: 0 0 120px #FFD700; }  /* Doubled glow size */
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  from { transform: translateX(-400px) scale(2); }  /* Added scale to maintain size while moving */
+  to { transform: translateX(calc(100vw + 400px)) scale(2); }  /* Added scale to maintain size while moving */
 }
 
 .rose-garden {
-  position: relative;
-  width: 300px;
-  height: 500px;
+  width: 100%;
+  height: calc(100% - 50px);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 20px;
 }
 
 .rose {
-  position: absolute;
-  bottom: 50px;
-  width: 200px;
-  height: 400px;
-}
-
-/* Stem */
-.stem {
-  position: absolute;
-  bottom: 12;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 3220px;
-  background: linear-gradient(to bottom, #2E8B57, #3CB371);
-  border-radius: 50px;
-  box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
-  animation: growStem 1.5s ease-out forwards;
-}
-
-/* Leaves */
-.leaves {
-  position: absolute;
-}
-
-.leaf {
-  position: absolute;
+  position: relative;
   width: 80px;
-  height: 40px;
-  background: linear-gradient(to right, #3CB371, #2E8B57);
-  border-radius: 50% 0;
-  opacity: 0;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -20px; /* Ensures stem touches ground */
 }
 
-.leaf1 {
-  left: -40px;
-  bottom: 100px;
-  transform: rotate(-30deg);
-  animation: growLeaf1 1s ease-out forwards;
-  animation-delay: 1s;
+.stem {
+  width: 8px;
+  height: 280px;
+  background: linear-gradient(to bottom, #2E8B57, #3CB371);
+  border-radius: 4px;
+  position: absolute;
+  bottom: -20px; /* Aligns with ground */
+  z-index: 1;
 }
 
-.leaf2 {
-  right: -40px;
-  bottom: 150px;
-  transform: rotate(30deg) scaleX(-1);
-  animation: growLeaf2 1s ease-out forwards;
-  animation-delay: 1.2s;
-}
-
-.leaf3 {
-  left: -20px;
-  bottom: 50px;
-  transform: rotate(-15deg);
-  animation: growLeaf3 1s ease-out forwards;
-  animation-delay: 1.4s;
-}
-
-/* Flower Petals */
 .flower {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 200px;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 120px;
+  z-index: 2;
 }
+
+.leaves {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 20px; /* Aligns with stem bottom */
+  z-index: 2;
+}
+
+.leaf {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(to right, #3CB371, #2E8B57);
+  border-radius: 50% 0;
+  opacity: 0;
+  animation: growLeaf 1s ease-out forwards;
+}
+
+.leaf1 {
+  left: -10px;
+  bottom: 40px;
+  transform: rotate(-30deg);
+  animation-delay: 1s;
+}
+
+.leaf2 {
+  right: -13.12px;
+  bottom: 120px;
+  transform: rotate(30deg) scaleX(-1);
+  animation-delay: 1.2s;
+}
+
+
 
 .petal {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, #d33636, #bb0000);
-  border-radius: 50% 0;
+  border-radius: 50%;
   opacity: 0;
+  animation: bloomPetal 0.5s ease-out forwards;
 }
 
 .petal-center {
-  top: 50px;
-  left: 50px;
-  transform: rotate(45deg);
-  animation: bloomPetal 0.5s ease-out forwards;
+  top: 20px;
+  left: 20px;
   animation-delay: 2s;
 }
 
-.petal-1 { 
-  top: 10;
-  left: 50;
-  transform: rotate(0deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 2.2s;
-}
+.petal-1 { top: 0; left: 20px; animation-delay: 2.1s; }
+.petal-2 { top: 20px; right: 0; animation-delay: 2.2s; }
+.petal-3 { bottom: 0; right: 20px; animation-delay: 2.3s; }
+.petal-4 { bottom: 20px; left: 0; animation-delay: 2.4s; }
+.petal-5 { top: 10px; left: 10px; animation-delay: 2.5s; }
+.petal-6 { top: 10px; right: 10px; animation-delay: 2.6s; }
+.petal-7 { bottom: 10px; right: 10px; animation-delay: 2.7s; }
+.petal-8 { bottom: 10px; left: 10px; animation-delay: 2.8s; }
 
-.petal-2 { 
-  top: 0;
-  right: 0;
-  transform: rotate(90deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 2.4s;
-}
-
-.petal-3 { 
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 2.6s;
-}
-
-.petal-4 { 
-  bottom: 0;
-  left: 0;
-  transform: rotate(270deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 2.8s;
-}
-
-.petal-5 { 
-  top: 16px;
-  left: 17px;
-  transform: rotate(45deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 3s;
-}
-
-.petal-6 { 
-  top: 10px;
-  right: 20px;
-  transform: rotate(135deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 3.2s;
-}
-
-.petal-7 { 
-  bottom: 20px;
-  right: 12px;
-  transform: rotate(225deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 3.4s;
-}
-
-.petal-8 { 
-  bottom: 20px;
-  left: 20px;
-  transform: rotate(315deg);
-  animation: bloomPetal 0.5s ease-out forwards;
-  animation-delay: 3.6s;
-}
-
-/* Ground */
 .ground {
+  width: 100%;
+  height: 50px;
+  background: #218f06;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(to top, #0f8611, #11701d);
+  z-index: 3;
 }
 
-/* Animations */
-@keyframes growStem {
-  0% { height: 0; }
-  100% { height: 2510px; }
-}
-
-@keyframes growLeaf1 {
-  0% { 
+@keyframes growLeaf {
+  from {
     opacity: 0;
-    transform: rotate(-30deg) scale(0);
+    transform-origin: center left;
+    transform: scale(0);
   }
-  100% { 
+  to {
     opacity: 1;
-    transform: rotate(-30deg) scale(1);
-  }
-}
-
-@keyframes growLeaf2 {
-  0% { 
-    opacity: 0;
-    transform: rotate(30deg) scaleX(-1) scale(0);
-  }
-  100% { 
-    opacity: 1;
-    transform: rotate(30deg) scaleX(-1) scale(1);
-  }
-}
-
-@keyframes growLeaf3 {
-  0% { 
-    opacity: 0;
-    transform: rotate(-15deg) scale(0);
-  }
-  100% { 
-    opacity: 1;
-    transform: rotate(-15deg) scale(1);
+    transform-origin: center left;
+    transform: scale(1);
   }
 }
 
 @keyframes bloomPetal {
-  0% { 
+  from {
     opacity: 0;
-    transform: scale(0) rotate(var(--rotation));
+    transform: scale(0);
   }
-  100% { 
+  to {
     opacity: 1;
-    transform: scale(1) rotate(var(--rotation));
+    transform: scale(1);
   }
 }
+

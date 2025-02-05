@@ -73,8 +73,8 @@ const Valentine = () => {
 
         {isProposalAnswered && (
           <div className="acceptance-message">
-            <h2>LETS GOOOOO I LOVE YOU 💕</h2>
-            <p>Here is a rose </p>
+            <h2>Thank you for being my valentine.</h2>
+              <h1>I LOVE YOU 💕</h1> 
             <div className="rose-footer">🌹</div>
           </div>
         )}
